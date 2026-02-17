@@ -3,169 +3,587 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golam Tausif | AI Security Researcher</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Golam Tausif | M.Sc. Researcher</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Config & Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        }
+                    },
+                    animation: {
+                        'spin-slow': 'spin 10s linear infinite',
+                        'spin-reverse-slow': 'spin 15s linear infinite reverse',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        :root {
-            --bg: #0a0a0a;
-            --text: #e0e0e0;
-            --accent: #d4af37; /* Classy Gold */
-            --secondary: #888;
-        }
-
         body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            line-height: 1.6;
+            background-color: #050914;
+            color: #e2e8f0;
+            overflow-x: hidden;
         }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-
-        header {
-            text-align: center;
-            padding: 60px 0;
-            border-bottom: 1px solid #222;
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
         }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin: 0;
-            letter-spacing: 2px;
-        }
-
-        .subtitle {
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.9rem;
-            margin-top: 10px;
-        }
-
-        section {
-            margin: 60px 0;
-        }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            border-left: 3px solid var(--accent);
-            padding-left: 15px;
-            margin-bottom: 30px;
-        }
-
-        .project-card {
-            background: #111;
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            transition: 0.3s;
-            border: 1px solid #1a1a1a;
-        }
-
-        .project-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-        }
-
-        .tag {
-            font-size: 0.7rem;
-            background: #222;
-            padding: 4px 10px;
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
             border-radius: 4px;
-            color: var(--accent);
-            margin-right: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569; 
         }
 
-        .poetry-box {
-            font-style: italic;
-            text-align: center;
-            color: var(--secondary);
-            padding: 40px;
-            background: #0d0d0d;
-            border-radius: 12px;
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease-out forwards;
         }
 
-        footer {
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--secondary);
-            margin-top: 100px;
-            padding-bottom: 40px;
+        .nav-active {
+            background-color: rgba(6, 182, 212, 0.1);
+            border-color: rgb(6, 182, 212);
+            color: rgb(34, 211, 238);
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
         }
-
-        a { color: var(--accent); text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(30, 41, 59, 1);
+        }
     </style>
 </head>
-<body>
+<body class="selection:bg-cyan-500/30 selection:text-cyan-100">
 
-<div class="container">
-    <header>
-        <h1>Golam Tausif</h1>
-        <div class="subtitle">AI Security • M.Sc. Computer Science • Researcher</div>
-        <p style="color: var(--secondary); margin-top: 20px;">
-            Exploring the intersection of Deep Learning and Cybersecurity. <br>
-            University of Gour Banga, Malda.
-        </p>
-    </header>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a 23-year-old postgraduate researcher specializing in <strong>Adversarial Machine Learning</strong>. 
-            My work focuses on identifying vulnerabilities in Deep Learning models and building robust defenses 
-            against sophisticated attacks. Beyond the screen, I find balance through motorcycle riding, 
-            photography, and the soulful depth of Urdu Shayari.
-        </p>
-    </section>
-
-    <section id="research">
-        <h2>Research & Projects</h2>
+    <!-- Background Star Field -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <div class="absolute w-full h-full bg-[#0a0f1c]"></div>
+        <!-- Stars -->
+        <div class="absolute w-[2px] h-[2px] bg-white rounded-full top-1/4 left-1/4 animate-pulse"></div>
+        <div class="absolute w-[3px] h-[3px] bg-cyan-400 rounded-full top-1/3 left-2/3 animate-pulse delay-75"></div>
+        <div class="absolute w-[2px] h-[2px] bg-amber-200 rounded-full top-3/4 left-1/5 animate-pulse delay-150"></div>
+        <div class="absolute w-[1px] h-[1px] bg-white rounded-full top-10 left-10 opacity-50"></div>
+        <div class="absolute w-[2px] h-[2px] bg-white rounded-full bottom-20 right-20 opacity-70 animate-pulse"></div>
         
-        <div class="project-card">
-            <h3>Shattered Manifolds</h3>
-            <p>A comprehensive seminar on adversarial attacks on deep learning models and their defenses. Analyzed the geometry of decision boundaries in high-dimensional spaces.</p>
-            <div><span class="tag">Deep Learning</span><span class="tag">AI Security</span></div>
+        <!-- Nebulas -->
+        <div class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-cyan-900/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-900/20 rounded-full blur-[100px]"></div>
+        
+        <!-- Grid -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(17,24,39,0)_1px,transparent_1px),linear-gradient(90deg,rgba(17,24,39,0)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] opacity-20"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-[#050914]/80 border-b border-slate-800/50">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div onclick="switchTab('home')" class="text-xl font-bold text-white tracking-widest cursor-pointer hover:text-cyan-400 transition-colors flex items-center gap-2">
+                <i data-lucide="cpu" class="text-cyan-500"></i>
+                <span class="uppercase">Golam<span class="text-cyan-500">Tausif</span></span>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center space-x-2" id="desktop-nav">
+                <!-- Nav items injected by JS -->
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-white" onclick="toggleMenu()">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-slate-900/95 backdrop-blur-xl flex flex-col items-center justify-center space-y-8 md:hidden hidden transform transition-transform duration-300">
+        <!-- Mobile items injected by JS -->
+    </div>
+
+    <!-- Main Content -->
+    <main class="relative z-10 pt-28 pb-20 px-6 max-w-6xl mx-auto min-h-screen flex flex-col">
+        
+        <!-- HOME SECTION -->
+        <div id="home" class="tab-content animate-fadeIn">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12 pt-10">
+                <div class="flex-1 space-y-6">
+                    <!-- Headline -->
+                    <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight">
+                        <span class="block text-slate-400 text-2xl md:text-3xl mb-2 font-light">Hello, I am</span>
+                        <span id="typewriter"></span><span class="animate-pulse text-cyan-400">_</span>
+                    </h1>
+                    
+                    <p class="text-xl text-slate-300 leading-relaxed max-w-xl">
+                        Bridging AI Ethics, Computer Vision, and Cybersecurity.<br/>
+                        <span class="text-slate-500 text-base">Specializing in Epistemological Bias and Secure Systems.</span>
+                    </p>
+
+                    <!-- Highlights Container -->
+                    <div class="flex flex-wrap gap-4 pt-4" id="highlights-container">
+                        <!-- Injected via JS -->
+                    </div>
+
+                    <div class="flex gap-4 pt-4">
+                        <button onclick="switchTab('projects')" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-3 px-8 rounded-full transition-all flex items-center gap-2">
+                            <i data-lucide="terminal" class="w-4 h-4"></i> View Projects
+                        </button>
+                        <button onclick="switchTab('contact')" class="border border-slate-600 hover:border-white text-slate-300 hover:text-white py-3 px-8 rounded-full transition-all">
+                            Contact Me
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Holographic Visual -->
+                <div class="relative w-72 h-72 md:w-96 md:h-96 hidden md:block">
+                    <div class="absolute inset-0 border-2 border-cyan-500/20 rounded-full animate-spin-slow"></div>
+                    <div class="absolute inset-4 border border-purple-500/30 rounded-full animate-spin-reverse-slow"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-48 h-48 bg-gradient-to-b from-cyan-500/20 to-purple-500/20 rounded-full blur-2xl"></div>
+                        <i data-lucide="code" class="w-16 h-16 text-cyan-400 relative z-10"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Interest Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16" id="interests-grid">
+                <!-- Injected via JS -->
+            </div>
         </div>
 
-        <div class="project-card">
-            <h3>Linguistic Contextual Masking</h3>
-            <p>Current research project investigating safety filter bypasses in LLMs using Bengali-English code-switching techniques.</p>
-            <div><span class="tag">NLP</span><span class="tag">LLM Safety</span><span class="tag">Research</span></div>
+        <!-- RESEARCH SECTION -->
+        <div id="research" class="tab-content hidden animate-fadeIn max-w-4xl mx-auto">
+            <div class="mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-3 tracking-tight">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">Research & Experience</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-cyan-500 to-amber-400 rounded-full mb-4"></div>
+                <p class="text-slate-400 max-w-2xl">My academic contributions and professional journey.</p>
+            </div>
+
+            <!-- Featured Publication -->
+            <div class="bg-gradient-to-r from-slate-900 to-slate-800 border-l-4 border-amber-400 rounded-r-xl p-8 shadow-lg mb-12">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <div class="text-amber-400 font-bold text-sm tracking-wider uppercase mb-2">Featured Publication (2025)</div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Epistemological Distortions in Large Language Models</h3>
+                        <p class="text-slate-300 leading-relaxed mb-6">
+                            A Prompt-Based Evaluation of Non-Western Medical Traditions. This study evaluated how models like Llama 4, Deepseek-R1, and Gemini 2.0 represent Ayurveda, Siddha, Unani, and TCM. We identified significant biases and proposed pathways for cognitively inclusive AI.
+                        </p>
+                        <div class="flex gap-2">
+                            <span class="px-3 py-1 bg-slate-700 rounded text-xs text-slate-300">AI Ethics</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded text-xs text-slate-300">LLM Evaluation</span>
+                        </div>
+                    </div>
+                    <i data-lucide="book-open" class="text-slate-600 hidden md:block w-12 h-12"></i>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent" id="timeline-container">
+                <!-- Injected via JS -->
+            </div>
         </div>
 
-        <div class="project-card">
-            <h3>Carbon Footprint Calculator</h3>
-            <p>An IoT hardware project utilizing Arduino to monitor and calculate environmental impact in real-time.</p>
-            <div><span class="tag">Arduino</span><span class="tag">IoT</span><span class="tag">DIY Electronics</span></div>
+        <!-- PROJECTS SECTION -->
+        <div id="projects" class="tab-content hidden animate-fadeIn">
+            <div class="mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-3 tracking-tight">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">Technical Projects</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-cyan-500 to-amber-400 rounded-full mb-4"></div>
+                <p class="text-slate-400 max-w-2xl">A collection of my work in AI, IoT, and Cybersecurity.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+                <!-- Injected via JS -->
+            </div>
         </div>
-    </section>
 
-    <section id="shayari">
-        <div class="poetry-box">
-            <p>"Musafir hain hum bhi, musafir ho tum bhi,<br>Kisi mod par phir mulaqat hogi."</p>
-            <span style="font-size: 0.8rem;">— A reflection of the journey</span>
+        <!-- SKILLS SECTION -->
+        <div id="skills" class="tab-content hidden animate-fadeIn max-w-4xl mx-auto">
+            <div class="mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-3 tracking-tight">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">Technical Arsenal</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-cyan-500 to-amber-400 rounded-full mb-4"></div>
+                <p class="text-slate-400 max-w-2xl">Tools and technologies I use to build and research.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="skills-grid">
+                <!-- Injected via JS -->
+            </div>
+            
+            <!-- Certifications -->
+            <div class="bg-gradient-to-br from-amber-900/20 to-slate-900 p-6 rounded-2xl border border-amber-500/20 mt-8">
+                <h3 class="text-xl font-bold text-amber-400 mb-4 flex items-center gap-2">
+                    <i data-lucide="award" class="w-5 h-5"></i> Certifications
+                </h3>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-slate-300 text-sm" id="certs-list">
+                    <!-- Injected via JS -->
+                </ul>
+            </div>
         </div>
-    </section>
 
-    <section id="contact">
-        <h2>Connect</h2>
-        <p>Interested in collaboration or research? Reach out to me at:</p>
-        <p><strong>Email:</strong> contact@thegolamtausif.in</p>
-        <p><strong>Location:</strong> Malda, West Bengal, India</p>
-    </section>
+        <!-- CONTACT SECTION -->
+        <div id="contact" class="tab-content hidden animate-fadeIn max-w-2xl mx-auto text-center pt-10">
+            <h2 class="text-4xl font-bold text-white mb-6">Let's Connect</h2>
+            <p class="text-slate-400 mb-10">
+                I am currently open to research collaborations and development opportunities in AI and Cybersecurity.
+            </p>
+            
+            <div class="grid gap-6">
+                <a href="mailto:glmtausif@gmail.com" class="group flex items-center justify-between p-6 bg-slate-800/50 rounded-xl border border-slate-700 hover:border-cyan-500 transition-all">
+                    <div class="flex items-center gap-4">
+                        <div class="p-3 bg-slate-900 rounded-full text-cyan-400 group-hover:scale-110 transition-transform">
+                            <i data-lucide="mail" class="w-6 h-6"></i>
+                        </div>
+                        <div class="text-left">
+                            <div class="text-sm text-slate-500">Email</div>
+                            <div class="text-lg font-mono text-white">glmtausif@gmail.com</div>
+                        </div>
+                    </div>
+                    <i data-lucide="external-link" class="text-slate-600 group-hover:text-white"></i>
+                </a>
 
-    <footer>
-        &copy; 2026 Golam Tausif | Built with Cloudflare & GitHub
+                <div class="grid grid-cols-2 gap-6">
+                    <a href="https://linkedin.com/in/thegolamtausif" target="_blank" class="flex items-center justify-center gap-3 p-4 bg-[#0077b5]/10 border border-[#0077b5]/30 text-[#0077b5] rounded-xl hover:bg-[#0077b5] hover:text-white transition-all font-bold">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/thegolamtausif" target="_blank" class="flex items-center justify-center gap-3 p-4 bg-slate-800 border border-slate-700 text-white rounded-xl hover:bg-white hover:text-black transition-all font-bold">
+                        <i data-lucide="github" class="w-5 h-5"></i> GitHub
+                    </a>
+                </div>
+
+                <div class="mt-8 p-6 border border-slate-800 rounded-xl bg-black/40">
+                    <div class="flex items-center justify-center gap-2 text-slate-500 mb-2">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i> Location
+                    </div>
+                    <div class="text-white">Chandipur, Malda, West Bengal, India</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-slate-800 bg-[#02040a] py-8 text-center text-slate-600 text-sm">
+        <p>&copy; 2026 Golam Tausif. Built with HTML, JS & Tailwind.</p>
     </footer>
-</div>
 
+    <!-- JavaScript Logic -->
+    <script>
+        // --- DATA CONSTANTS (Edit your details here) ---
+        const HIGHLIGHTS = [
+            { text: "UGC NET Qualified (Dec 2025)", icon: "award", colorClass: "border-amber-400/50 bg-amber-400/10 text-amber-300" },
+            { text: "Selected: Cyber Crime Wing, WB Police", icon: "shield", colorClass: "border-cyan-400/50 bg-cyan-400/10 text-cyan-300" },
+            { text: "GATE 2025 Qualified", icon: "brain", colorClass: "border-purple-400/50 bg-purple-400/10 text-purple-300" }
+        ];
+
+        const INTERESTS = [
+            { title: "AI Ethics & Fairness", desc: "Epistemological bias, LLM evaluation.", icon: "brain" },
+            { title: "Computer Vision", desc: "Deep learning, healthcare AI.", icon: "layers" },
+            { title: "Cybersecurity", desc: "Steganography, secure comms.", icon: "lock" },
+            { title: "GIS & IoT", desc: "Smart transport systems.", icon: "wifi" },
+        ];
+
+        const PROJECTS = [
+            {
+                title: "Epistemological Distortions in LLMs",
+                category: "Research",
+                tech: ["LLM Eval", "Python"],
+                desc: "Co-authored a study evaluating Ayurveda & Siddha in Llama 4 and Gemini 2.0.",
+                featured: true,
+                icon: "book-open"
+            },
+            {
+                title: "Underwater Garbage Detection",
+                category: "Computer Vision",
+                tech: ["Python", "OpenCV", "DL"],
+                desc: "Vision-based model achieving 85% accuracy. Winner: 1st Prize - YUVA UTSAB 2024.",
+                featured: false,
+                icon: "eye"
+            },
+            {
+                title: "Steganography Research Tool",
+                category: "Cybersecurity",
+                tech: ["Flask", "RC4", "LSB"],
+                desc: "Secure communication tool using RC4 encryption and LSB embedding.",
+                featured: false,
+                icon: "shield"
+            },
+            {
+                title: "Sign Language Recognition",
+                category: "ML",
+                tech: ["TensorFlow", "OpenCV"],
+                desc: "Real-time gesture recognition system with 90% accuracy.",
+                featured: false,
+                icon: "hand"
+            },
+            {
+                title: "Smart Railway System",
+                category: "IoT",
+                tech: ["IoT Sensors", "Analytics"],
+                desc: "Intelligent traffic management reducing congestion by 40%.",
+                featured: false,
+                icon: "wifi"
+            },
+            {
+                title: "GIS Housing Dashboard",
+                category: "Web & GIS",
+                tech: ["GIS", "Web Dev"],
+                desc: "Finalist in Govt. of Sikkim Hackathon. Monitoring dashboard.",
+                featured: false,
+                icon: "map"
+            }
+        ];
+
+        const TIMELINE = [
+            {
+                year: "2025",
+                title: "Selected: Cyber Crime Wing",
+                org: "West Bengal Police",
+                desc: "Software Support Personnel role.",
+                icon: "shield",
+                color: "text-cyan-400"
+            },
+            {
+                year: "2024-Present",
+                title: "M.Sc. Computer Science",
+                org: "University of Gour Banga",
+                desc: "Specialization in AI & Epistemological Bias.",
+                icon: "award",
+                color: "text-slate-400"
+            },
+            {
+                year: "2021-2024",
+                title: "B.Sc. Computer Science (Hons)",
+                org: "Malda College",
+                desc: "81.53% Score. Final year Steganography project.",
+                icon: "award",
+                color: "text-slate-400"
+            }
+        ];
+
+        const SKILLS = [
+            { category: "Languages", items: ["Python", "C++", "Java", "SQL"] },
+            { category: "AI/ML", items: ["TensorFlow", "PyTorch", "OpenCV", "Scikit-learn", "LLMs"] },
+            { category: "Tools", items: ["LaTeX", "Jupyter", "Git", "Docker", "SPSS"] },
+            { category: "Web/DB", items: ["Flask", "MySQL", "React Basics"] },
+        ];
+
+        const CERTIFICATIONS = [
+            "Cisco Networking Academy - Cybersecurity Fundamentals",
+            "Coursera - Excel for Data Science",
+            "Google Digital Garage - Digital Marketing",
+            "Python Core - MySirG"
+        ];
+
+        // --- RENDER FUNCTIONS ---
+
+        function renderAll() {
+            // Render Highlights
+            const highlightsContainer = document.getElementById('highlights-container');
+            highlightsContainer.innerHTML = HIGHLIGHTS.map(h => `
+                <div class="flex items-center space-x-2 px-4 py-2 rounded-lg border text-sm font-medium ${h.colorClass}">
+                    <i data-lucide="${h.icon}" class="w-4 h-4"></i>
+                    <span>${h.text}</span>
+                </div>
+            `).join('');
+
+            // Render Interests
+            const interestsGrid = document.getElementById('interests-grid');
+            interestsGrid.innerHTML = INTERESTS.map(i => `
+                <div class="glass-card p-4 flex flex-col items-center text-center rounded-xl hover:bg-slate-800/80 transition-colors">
+                    <div class="mb-3 p-3 bg-slate-800 rounded-full text-cyan-400">
+                        <i data-lucide="${i.icon}" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-white font-semibold mb-1 text-sm">${i.title}</h3>
+                    <p class="text-xs text-slate-400">${i.desc}</p>
+                </div>
+            `).join('');
+
+            // Render Timeline
+            const timelineContainer = document.getElementById('timeline-container');
+            timelineContainer.innerHTML = TIMELINE.map((t, idx) => `
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-900 text-slate-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        <i data-lucide="${t.icon}" class="w-4 h-4"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-slate-700 bg-slate-800/50 hover:border-cyan-500/30 transition-colors">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <div class="font-bold text-white">${t.title}</div>
+                            <time class="font-mono text-xs ${t.color}">${t.year}</time>
+                        </div>
+                        <div class="text-slate-400 text-sm">${t.org}</div>
+                        <div class="text-slate-500 text-xs mt-2">${t.desc}</div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Render Projects
+            const projectsGrid = document.getElementById('projects-grid');
+            projectsGrid.innerHTML = PROJECTS.map(p => `
+                <div class="glass-card flex flex-col h-full group rounded-xl p-6 hover:shadow-[0_0_20px_rgba(34,211,238,0.05)] hover:border-cyan-500/50 transition-all duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="bg-slate-800 p-2 rounded-lg text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                            <i data-lucide="${p.icon}" class="w-5 h-5"></i>
+                        </div>
+                        ${p.featured ? '<span class="text-[10px] font-bold px-2 py-1 bg-amber-500/20 text-amber-400 border border-amber-500/50 rounded uppercase tracking-wide">Featured</span>' : ''}
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                        ${p.title}
+                    </h3>
+                    
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4 flex-grow">
+                        ${p.desc}
+                    </p>
+                    
+                    <div class="mt-auto">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            ${p.tech.map(t => `<span class="text-xs font-mono text-slate-500 bg-slate-900 border border-slate-800 px-2 py-1 rounded">${t}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Render Skills
+            const skillsGrid = document.getElementById('skills-grid');
+            skillsGrid.innerHTML = SKILLS.map(s => `
+                <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800">
+                    <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-800 pb-2">
+                        ${s.category}
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        ${s.items.map(item => `
+                            <div class="relative flex items-center bg-slate-900 px-4 py-2 rounded-lg border border-slate-800 text-slate-300 text-sm hover:border-cyan-500/50 transition-colors">
+                                ${item}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+
+            // Render Certs
+            document.getElementById('certs-list').innerHTML = CERTIFICATIONS.map(c => `
+                <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div> ${c}</li>
+            `).join('');
+        }
+
+        // --- NAVIGATION LOGIC ---
+
+        const TABS = ['home', 'research', 'projects', 'skills', 'contact'];
+        
+        // Render Nav Buttons
+        function renderNav() {
+            const icons = {home: 'terminal', research: 'book-open', projects: 'code', skills: 'layers', contact: 'mail'};
+            
+            // Desktop
+            document.getElementById('desktop-nav').innerHTML = TABS.map(tab => `
+                <button onclick="switchTab('${tab}')" id="nav-${tab}" class="flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 border border-transparent text-slate-400 hover:text-white hover:bg-slate-800/50 capitalize">
+                    <i data-lucide="${icons[tab]}" class="w-4 h-4"></i>
+                    <span class="font-medium text-sm tracking-wide">${tab}</span>
+                </button>
+            `).join('');
+
+            // Mobile
+            document.getElementById('mobile-menu').innerHTML = TABS.map(tab => `
+                <button onclick="switchTab('${tab}'); toggleMenu()" class="text-2xl font-bold uppercase tracking-widest text-slate-400 hover:text-cyan-400">
+                    ${tab}
+                </button>
+            `).join('');
+        }
+
+        function switchTab(tabId) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            // Show active content
+            document.getElementById(tabId).classList.remove('hidden');
+            
+            // Reset Nav Styles
+            document.querySelectorAll('#desktop-nav button').forEach(el => {
+                el.classList.remove('nav-active');
+                el.classList.add('border-transparent', 'text-slate-400');
+            });
+
+            // Set Active Nav Style
+            const activeBtn = document.getElementById(`nav-${tabId}`);
+            if(activeBtn) {
+                activeBtn.classList.remove('border-transparent', 'text-slate-400');
+                activeBtn.classList.add('nav-active');
+            }
+            
+            window.scrollTo(0,0);
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            
+            // Simple icon toggle workaround since we are re-rendering lucide icons might be tricky dynamically
+            if (menu.classList.contains('hidden')) {
+                icon.setAttribute('data-lucide', 'menu');
+            } else {
+                icon.setAttribute('data-lucide', 'x');
+            }
+            lucide.createIcons();
+        }
+
+        // --- TYPEWRITER EFFECT ---
+        function startTypewriter() {
+            const text = "Golam Tausif";
+            const el = document.getElementById('typewriter');
+            let i = 0;
+            const timer = setInterval(() => {
+                if (i < text.length) {
+                    el.innerHTML += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(timer);
+                }
+            }, 100);
+        }
+
+        // --- INIT ---
+        window.onload = function() {
+            renderAll();
+            renderNav();
+            switchTab('home');
+            startTypewriter();
+            lucide.createIcons();
+        };
+
+    </script>
 </body>
 </html>
